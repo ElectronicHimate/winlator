@@ -8,8 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.winlator"
-        minSdk 28
-        //noinspection ExpiredTargetSdkVersion
+        minSdk 26
         targetSdk 28
         versionCode 21
         versionName "7.1.5-glibc"
