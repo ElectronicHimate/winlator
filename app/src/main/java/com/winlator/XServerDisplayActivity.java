@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -61,6 +62,7 @@ import com.winlator.math.Mathf;
 import com.winlator.midi.MidiHandler;
 import com.winlator.midi.MidiManager;
 import com.winlator.renderer.GLRenderer;
+import com.winlator.renderer.ScreenFxDialog;
 import com.winlator.widget.FrameRating;
 import com.winlator.widget.InputControlsView;
 import com.winlator.widget.MagnifierView;
@@ -348,6 +350,7 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
             xServerView.onResume();
             environment.onResume();
         }
+        xServerView.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
     }
 
     @Override
@@ -430,6 +433,11 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
                     });
                     container.addView(magnifierView);
                 }
+                drawerLayout.closeDrawers();
+                break;
+            case R.id.main_menu_screen_effect:
+                xServerView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
+                (new ScreenFxDialog(this)).show();
                 drawerLayout.closeDrawers();
                 break;
             case R.id.main_menu_logs:

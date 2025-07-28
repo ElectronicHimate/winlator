@@ -339,8 +339,17 @@
         <i><b>File Provider</b></i> allows access to Winlator\'s internal data through android file manager.<br/><br/>
     ]]></string>
     <string name="reconfigure">Reconfigure</string>
-    <string name="do_you_want_to_reconfigure_wine">Do you want to reconfigure this container on the next startup? This will remove the timestamp to trigger Wine Configuration.</string>
+    <string name="do_you_want_to_reconfigure_wine</string>
     <string name="virtual_buttons_haptics">Virtual buttons haptics</string>
+    <string name="screen_effect">Screen effect</string>
+    <string name="reset">Reset</string>
+    <string name="antialiasing">Antialiasing</string>
+    <string name="bloom">Bloom</string>
+    <string name="brightness">Brightness</string>
+    <string name="contrast">Contrast</string>
+    <string name="gamma">Gamma</string>
+    <string name="reflection">Reflection</string>
+    <string name="saturation">Saturation</string>
 
     <!-- OpenXR specific text -->
     <string name="use_xr">Use OpenXR integration</string>
