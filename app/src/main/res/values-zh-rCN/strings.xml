@@ -26,6 +26,7 @@
     <string name="shape">形状</string>
     <string name="type">类型</string>
     <string name="binding">绑定</string>
+    <string name="binding_secondary">二次绑定</string>
     <string name="binding_up">绑定 向上</string>
     <string name="binding_right">绑定 向右</string>
     <string name="binding_down">绑定 向下</string>
@@ -286,6 +287,7 @@
     ]]></string>
     <string name="reconfigure">重新配置</string>
     <string name="do_you_want_to_reconfigure_wine">您想要在下一次启动时重新配置容器吗? 这将删除时间戳以触发Wine配置。</string>
+    <string name="virtual_buttons_haptics">虚拟按钮触觉</string>
     <string name="screen_effect">屏幕效果</string>
     <string name="reset">重置</string>
     <string name="antialiasing">抗锯齿</string>
@@ -297,6 +299,7 @@
     <string name="saturation">饱和度</string>
 
     <!-- OpenXR specific text -->
+    <string name="use_xr">使用 OpenXR 集成</string>
     <string name="toggle_orientation">切换方向</string>
     <string name="primary_controller">主控制器</string>
     <string name="left_controller">左控制器</string>

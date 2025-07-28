@@ -88,7 +88,7 @@ public class GLRenderer implements GLSurfaceView.Renderer, WindowManager.OnWindo
 
     @Override
     public void onSurfaceChanged(GL10 gl, int width, int height) {
-        if (XrActivity.isSupported()) {
+        if (XrActivity.isEnabled(null)) {
             XrActivity activity = XrActivity.getInstance();
             activity.init();
             width = activity.getWidth();
@@ -117,7 +117,7 @@ public class GLRenderer implements GLSurfaceView.Renderer, WindowManager.OnWindo
     private void drawFrame() {
         boolean xrFrame = false;
         boolean xrImmersive = false;
-        if (XrActivity.isSupported()) {
+        if (XrActivity.isEnabled(null)) {
             xrImmersive = XrActivity.getImmersive();
             xrFrame = XrActivity.getInstance().beginFrame(xrImmersive, XrActivity.getSBS());
         }
@@ -258,17 +258,18 @@ public class GLRenderer implements GLSurfaceView.Renderer, WindowManager.OnWindo
         GLES20.glUniform2f(windowMaterial.getUniformLocation("viewSize"), xServer.screenInfo.width, xServer.screenInfo.height);
         quadVertices.bind(windowMaterial.programId);
 
+        boolean singleWindow = forceFullscreen;
         try (XLock lock = xServer.lock(XServer.Lockable.DRAWABLE_MANAGER)) {
             rootWindowDownsized = false;
-            if (!renderableWindows.isEmpty()) {
+            if (fullscreen && !renderableWindows.isEmpty()) {
                 RenderableWindow root = renderableWindows.get(0);
                 if ((root.content.width < xServer.screenInfo.width) || (root.content.height < xServer.screenInfo.height)) {
-                    forceFullscreen = true;
                     rootWindowDownsized = true;
+                    singleWindow = true;
                 }
             }
 
-            if (forceFullscreen && !renderableWindows.isEmpty()) {
+            if (singleWindow && !renderableWindows.isEmpty()) {
                 RenderableWindow window = renderableWindows.get(renderableWindows.size() - 1);
                 renderDrawable(window.content, window.rootX, window.rootY, windowMaterial, true);
             } else {

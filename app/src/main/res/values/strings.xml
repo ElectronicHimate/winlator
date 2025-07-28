@@ -26,6 +26,7 @@
     <string name="shape">Shape</string>
     <string name="type">Type</string>
     <string name="binding">Binding</string>
+    <string name="binding_secondary">Secondary binding</string>
     <string name="binding_up">Binding Up</string>
     <string name="binding_right">Binding Right</string>
     <string name="binding_down">Binding Down</string>
@@ -338,7 +339,8 @@
         <i><b>File Provider</b></i> allows access to Winlator\'s internal data through android file manager.<br/><br/>
     ]]></string>
     <string name="reconfigure">Reconfigure</string>
-    <string name="do_you_want_to_reconfigure_wine">Do you want to reconfigure this container on the next startup? This will remove the timestamp to trigger Wine Configuration.</string>
+    <string name="do_you_want_to_reconfigure_wine</string>
+    <string name="virtual_buttons_haptics">Virtual buttons haptics</string>
     <string name="screen_effect">Screen effect</string>
     <string name="reset">Reset</string>
     <string name="antialiasing">Antialiasing</string>
@@ -350,6 +352,7 @@
     <string name="saturation">Saturation</string>
 
     <!-- OpenXR specific text -->
+    <string name="use_xr">Use OpenXR integration</string>
     <string name="xr" translatable="false">XR</string>
     <string name="primary_controller">Primary controller</string>
     <string name="left_controller">Left controller</string>
